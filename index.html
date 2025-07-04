@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Text Game</title>
+		<link rel="stylesheet" href="./styles/style.css" />
+	</head>
+	<body>
+		<div class="game fade-in active">
+			<!-- game name -->
+			<div class="game__name">
+				<h1 class="game__title">Fatum Legion</h1>
+				<p class="game__description">
+					Fatum Legion — Wings Above the Copper City
+				</p>
+				<div class="ui__gear ui__gear--start"></div>
+			</div>
+
+			<!-- start button -->
+
+			<div class="game__button">
+				<button type="button" class="game__button-start">
+					Power Up the Dirigible
+				</button>
+			</div>
+		</div>
+
+		<main id="main_screen" class="hidden">
+			<div class="game__scene">
+				<!-- image area -->
+				<div class="game__image">
+					<img
+						src="./assets/images/start.png"
+						id="game__img"
+						class="game__background"
+					/>
+				</div>
+
+				<!-- text area -->
+				<div class="game__text">
+					<span id="game__text"></span>
+					<span id="game__character-dialogue"></span>
+				</div>
+
+				<!-- dialog area -->
+				<div class="game__choices" id="game__choices"></div>
+			</div>
+		</main>
+
+		<script type="module" src="./js/main.js"></script>
+		<!-- <script type="module" src="./js/game.js"></script> -->
+	</body>
+</html>

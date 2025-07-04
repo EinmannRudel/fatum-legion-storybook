@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap');
+
+:root {
+	/* Основні кольори */
+	--color-bg-dark: #28221e; /* Темно-коричневий, фон */
+	--color-bg-panel: #42342c; /* Темний панельний фон */
+	--color-bronze: #b27845; /* Класичний бронзовий */
+	--color-copper: #b96d36; /* Мідний акцент */
+	--color-steel: #8a8a8a; /* Металевий, допоміжний */
+	--color-gold: #c9a05a; /* Золотий для заголовків */
+	--color-text-main: #f2e6c8; /* Світлий текст */
+	--color-text-accent: #ffe18d; /* Акцент для кнопок/заголовків */
+	--color-turquoise: #52a7a7; /* Бірюзовий акцент */
+	--color-danger: #be4040; /* Для попереджень */
+
+	/* Градієнти */
+	--gradient-bg: linear-gradient(135deg, #28221e 0%, #42342c 100%);
+	--gradient-btn: linear-gradient(90deg, #b27845 0%, #c9a05a 100%);
+
+	/* Тіні */
+	--shadow-soft: 0 4px 16px rgba(40, 34, 30, 0.25);
+	--shadow-hard: 0 2px 8px rgba(60, 40, 20, 0.4);
+	--shadow-glow: 0 0 12px #b96d36, 0 0 24px #b27845;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/** fonts */
+
+body,
+p,
+span {
+	font-family: 'PT Serif', serif;
+}
+
+h1,
+h2 {
+	font-family: 'Special Elite', system-ui;
+}
+
+.hidden {
+	display: none;
+}
+
+.active {
+	display: block;
+}
+
+/** header */
+
+body {
+	background: var(--gradient-bg);
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.game__title {
+	text-align: center;
+	margin: 160px auto 0;
+
+	color: var(--color-gold);
+	text-shadow: var(--shadow-glow);
+	font-size: 3em;
+	letter-spacing: 5px;
+
+	animation: electric-flicker 1.8s infinite;
+}
+
+@keyframes electric-flicker {
+	0%,
+	100% {
+		opacity: 1;
+		text-shadow: var(--shadow-glow);
+		color: var(--color-gold);
+	}
+	5%,
+	15%,
+	25% {
+		opacity: 0.5;
+		text-shadow: 0 0 8px #fff7b3, 0 0 16px #be4040;
+		color: #fff7b3;
+	}
+	10%,
+	20%,
+	30% {
+		opacity: 1;
+		text-shadow: 0 0 24px #ffe18d, 0 0 32px #b27845;
+		color: var(--color-gold);
+	}
+}
+
+.game__description {
+	text-align: center;
+	margin: 80px auto 0;
+
+	color: var(--color-copper);
+	text-shadow: var(--shadow-soft);
+
+	font-size: 1.4em;
+	letter-spacing: 1px;
+}
+
+.game__button {
+	text-align: center;
+
+	margin: 200px auto 0;
+}
+
+.game__button-start {
+	padding: 20px 20px;
+
+	background: var(--gradient-btn);
+	box-shadow: var(--shadow-hard);
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+
+	font-size: 1em;
+	font-weight: 600;
+	color: var(--color-text-accent);
+	text-shadow: var(--shadow-soft);
+	letter-spacing: 1.5px;
+
+	transition: filter 0.4s;
+}
+
+.game__button-start:hover {
+	filter: brightness(1.3);
+	box-shadow: 0 0 24px #ffe18d, 0 0 16px #b27845;
+	transition: filter 0.2s, box-shadow 0.2s;
+}
+
+/* Початково: екран повністю видимий */
+.fade-in {
+	opacity: 1;
+	transition: opacity 0.6s;
+	pointer-events: auto;
+}
+
+/* Для зникнення екрану */
+.fade-out {
+	opacity: 0;
+	transition: opacity 0.6s;
+	pointer-events: none;
+}
+
+/* 
+#main_screen {
+	width: 100%;
+	height: 100vh;
+} */
+
+/** game styles  */
+
+/* .game__background {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: contain;
+	z-index: 1;
+} */
+
+.game__background {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	z-index: 1;
+	filter: blur(16px) brightness(0.6);
+}
+
+.game__image-actual {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 80vw;
+	max-height: 80vh;
+	z-index: 2;
+	border-radius: 18px;
+	box-shadow: 0 8px 32px #28221e88;
+}
