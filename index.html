@@ -7,27 +7,44 @@
 		<link rel="stylesheet" href="./styles/style.css" />
 	</head>
 	<body>
-		<div class="game fade-in active">
-			<!-- game name -->
-			<div class="game__name">
-				<h1 class="game__title">Fatum Legion</h1>
-				<p class="game__description">
-					Fatum Legion — Wings Above the Copper City
-				</p>
-				<div class="ui__gear ui__gear--start"></div>
+		<div class="game active">
+			<!-- book UI -->
+
+			<div class="book__page book__page--left">
+				<!-- <h2 class="logo">EinMannRudel</h2> -->
+				<div class="book__logo-container">
+					<img
+						src="./assets/images/my_logo_2.png"
+						alt="logo"
+						class="book__logo"
+					/>
+				</div>
 			</div>
 
-			<!-- start button -->
+			<div class="book__seam"></div>
 
-			<div class="game__button">
-				<button type="button" class="game__button-start">
-					Power Up the Dirigible
-				</button>
+			<div class="book__page book__page--right flippin">
+				<!-- game name -->
+				<div class="game__name">
+					<h1 class="game__title">Fatum Legion</h1>
+					<p class="game__description">
+						Fatum Legion — Wings Above the Copper City
+					</p>
+					<div class="ui__gear ui__gear--start"></div>
+				</div>
+
+				<!-- start button -->
+
+				<div class="game__button">
+					<button type="button" class="game__button-start">
+						Power Up the Dirigible
+					</button>
+				</div>
 			</div>
 		</div>
 
-		<main id="main_screen" class="hidden">
-			<div class="game__scene">
+		<main id="main_screen" class="main__screen hidden">
+			<div class="game__scene game__scene--left">
 				<!-- image area -->
 				<div class="game__image">
 					<img
@@ -36,17 +53,25 @@
 						class="game__background"
 					/>
 				</div>
+			</div>
 
+			<div class="book__seam"></div>
+
+			<div class="game__scene game__scene--right">
 				<!-- text area -->
 				<div class="game__text">
-					<span id="game__text"></span>
-					<span id="game__character-dialogue"></span>
-				</div>
+					<span id="game__author-text">hello</span>
+					<span id="game__character-dialogue">hello2</span>
 
-				<!-- dialog area -->
-				<div class="game__choices" id="game__choices"></div>
+					<!-- dialog area -->
+					<div class="game__choices" id="game__choices">
+						<span class="game__choices-player">hello3</span>
+					</div>
+				</div>
 			</div>
 		</main>
+
+		<audio id="bg-music" src="./assets/audio/bg-music.mp3" loop></audio>
 
 		<script type="module" src="./js/main.js"></script>
 		<!-- <script type="module" src="./js/game.js"></script> -->

@@ -29,7 +29,7 @@ export const scenes = [
 
 const sceneImage = document.getElementById('game__img');
 const sceneFocus = document.getElementById('game__image-actual');
-const sceneText = document.getElementById('game__text');
+const sceneText = document.getElementById('game__author-text');
 const sceneDialog = document.getElementById('game__character-dialogue');
 
 export const showScene = (sceneId) => {
