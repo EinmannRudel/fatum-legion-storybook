@@ -70,14 +70,14 @@ body {
 	position: relative;
 	perspective-origin: 80% 50%;
 
-	margin: 160px auto;
+	margin: 50px auto;
 }
 
 .book__page {
 	width: 44vw;
 	max-width: 600px;
 	min-width: 240px;
-	height: 68vh;
+	height: 90vh;
 	min-height: 320px;
 
 	background: url('/assets/images/paper-bg.jpg') center center/cover no-repeat,
@@ -136,7 +136,7 @@ body {
 
 .book__seam {
 	width: 8px;
-	height: 67vh;
+	height: 90vh;
 	background: repeating-linear-gradient(
 			to bottom,
 			#d5ba87 0 5px,
@@ -205,14 +205,14 @@ body {
 	/* gap: 20px; */
 	position: relative;
 
-	margin: 160px auto;
+	margin: 50px auto;
 }
 
 .game__scene {
 	width: 44vw;
 	max-width: 600px;
 	min-width: 240px;
-	height: 68vh;
+	height: 90vh;
 	min-height: 320px;
 
 	background: url('/assets/images/paper-bg.jpg') center center/cover no-repeat,
@@ -246,10 +246,60 @@ body {
 	flex-direction: column;
 	/* justify-content: center; */
 	align-items: center;
+	gap: 40px;
 
-	margin: 120px auto;
+	padding: 0 14px;
+	margin: 10px auto;
 }
 
 #bg-music {
 	display: none;
+}
+
+#game__author-text {
+	font-size: 1.6em;
+
+	color: #51321f;
+	text-shadow: var(--shadow-soft);
+	font-weight: 600;
+	font-style: italic;
+	letter-spacing: 2px;
+}
+
+#game__character-dialogue {
+	font-size: 1.6em;
+	font-weight: 700;
+
+	color: var(--color-bg-dark);
+	text-shadow: var(--shadow-soft);
+}
+
+#speaker {
+	/* display: block; */
+	font-weight: 600;
+	font-style: italic;
+	font-size: 1.6em;
+	color: #51321f;
+	text-shadow: var(--shadow-soft);
+	/* margin-top: 2px; */
+}
+
+.game__choices {
+	margin: 20px auto 0;
+
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.game__choices-player {
+	font-size: 1.6em;
+
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.game__choices-player:hover {
+	/* background: var(--color-steel); */
+	background: #8a8a8a60;
 }
